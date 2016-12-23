@@ -1,0 +1,20 @@
+version: '2'
+services:
+  gitlab-backup:
+    build: .
+    restart: always
+    volumes:
+      - ./backup_home:/home/backup
+    environment:
+      GITLAB_DOMAIN: ${GITLAB_DOMAIN}
+      GITLAB_PORT: ${GITLAB_PORT}
+      GITLAB_SSH_PORT: ${GITLAB_SSH_PORT}
+      KEY_SSH_RSA: ${KEY_SSH_RSA}
+      KEY_ECDSA: ${KEY_ECDSA}
+      KEY_ED25519: ${KEY_ED25519}
+      PROJECT_MAX_NUMBER: ${PROJECT_MAX_NUMBER}
+      PRIVATE_TOKEN: ${PRIVATE_TOKEN}
+      BACKUP_DIR: ${BACKUP_DIR}
+      GITLAB_USERNAME: ${GITLAB_USERNAME}
+      GITLAB_PASSWORD: ${GITLAB_PASSWORD}
+      RETAIN_TIME: ${RETAIN_TIME}

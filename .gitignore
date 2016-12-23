@@ -1,0 +1,4 @@
+backup_home
+vars
+stackfile.yml
+docker-compose.yml

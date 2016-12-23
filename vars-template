@@ -1,0 +1,13 @@
+export GITLAB_DOMAIN=gitlab.com
+export GITLAB_PORT=443
+export GITLAB_SSH_PORT=22
+export KEY_SSH_RSA="ssh-rsa XXXXXXXXXXXXXXXX"
+export KEY_ECDSA="ecdsa-sha2-nistp256 XXXXXXXXXXXXX"
+export KEY_ED25519="ssh-ed25519 XXXXXXXXXXXXXXX"
+export PROJECT_MAX_NUMBER=300
+export PRIVATE_TOKEN=XXXXXXXXXXXXX
+export BACKUP_DIR=/home/backup
+export GITLAB_USERNAME=some_user
+export GITLAB_PASSWORD=some_password
+export BACKUP_SERVER_PATH=/home/backup
+export RETAIN_TIME=30
