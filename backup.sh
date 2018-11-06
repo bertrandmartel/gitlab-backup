@@ -17,7 +17,7 @@ ssh-keyscan -p $GITLAB_SSH_PORT $GITLAB_DOMAIN >> ~/.ssh/known_hosts
 
 rm -rf $TMP_DIR && mkdir -p $TMP_DIR && cd $TMP_DIR
 
-curl -s  "https://$GITLAB_DOMAIN:$GITLAB_PORT/api/v3/projects?private_token=$PRIVATE_TOKEN&page=1&per_page=$PROJECT_MAX_NUMBER" | \
+curl -s  "https://$GITLAB_DOMAIN:$GITLAB_PORT/api/v4/projects?private_token=$PRIVATE_TOKEN&page=1&per_page=$PROJECT_MAX_NUMBER&owned=true" | \
     jq '.[].http_url_to_repo' | \
     sed "s/https:\/\//https:\/\/$GITLAB_USERNAME:$GITLAB_PASSWORD@/g" | \
     xargs -P10 -I{} git clone {}
